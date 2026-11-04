@@ -581,8 +581,8 @@ namespace NinjaTrader.NinjaScript.Indicators.icPA
         {
             if (State == State.SetDefaults)
             {
-                Description = "Economic calendar on the chart from the Forex Factory weekly feed: a panel with countdowns, vertical event markers, shaded news windows and optional alerts. Works on any chart (Daily and higher show the panel only) and needs an internet connection. v" + IndicatorVersion + "\r\n\r\n"
-                            + "Developed by Istvan Cebrian | https://icpriceaction.com\r\n\r\n"
+                Description = "Economic calendar on the chart from the Forex Factory weekly feed: a panel with countdowns, vertical event markers, shaded news windows and optional alerts. Works on any chart (Daily and higher show the panel only) and needs an internet connection. v" + IndicatorVersion + "\r\n"
+                            + "Developed by Istvan Cebrian | https://icpriceaction.com\r"
                             + "Support this free tool: https://buymeacoffee.com/icpriceaction";
                 Name = "icPA - News";
                 Calculate = Calculate.OnBarClose;   // OnBarUpdate is empty; rendering is driven by the timer / ForceRefresh
