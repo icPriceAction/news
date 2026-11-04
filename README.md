@@ -2,12 +2,11 @@
 
 [![NinjaTrader 8](https://img.shields.io/badge/Platform-NinjaTrader%208-black.svg)](https://ninjatrader.com)
 [![License: Personal Use](https://img.shields.io/badge/License-Personal%20Use-6E6E6E.svg)](#license)
+[![Support: Buy Me a Coffee](https://img.shields.io/badge/Support-Buy%20Me%20a%20Coffee-FFDD00?logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/icpriceaction)
 [![YouTube Guide](https://img.shields.io/badge/YouTube-Watch%20Walkthrough-red.svg)](https://youtube.com/@icPriceAction)
 [![Website](https://img.shields.io/badge/Website-icpriceaction.com-111213.svg)](https://icpriceaction.com)
-[![Buy Me a Coffee](https://img.shields.io/badge/Support-Buy%20Me%20a%20Coffee-FFDD00?logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/icpriceaction)
-[![Prop Discounts](https://img.shields.io/badge/Prop%20Discounts-Code%20ICPAT-black.svg)](https://icpriceaction.com/prop-firms.html)
 
-A specialized Indicator engineered for Price Action day trading. It brings this week's Forex Factory economic calendar onto your chart as a compact panel with live countdowns, vertical event markers and shaded news windows, so you always know when the next release can hit your market.
+A specialized Indicator engineered for trading. It brings this week's Forex Factory economic calendar onto your chart as a compact panel with live countdowns, vertical event markers and shaded news windows, so you always know when the next release can hit your market.
 
 ---
 
@@ -21,13 +20,31 @@ Watch the complete breakdown of parameters, price action context, and chart exam
 
 ---
 
+## ☕ Support the Project
+
+All tools by **icPriceAction** are **100% free and open-source for personal trading use**. There are no paywalls, subscriptions, or locked features and there never will be!
+
+Developing, optimizing for zero latency on multiple charts/instruments, and maintaining documentation and releases takes a **considerable amount of personal time and ongoing effort**. 
+
+If this tool saves you screen time, improves your execution, or cleans up your charts, buying a coffee is the best way to support continued development:
+
+<p align="left">
+  <a href="https://buymeacoffee.com/icpriceaction" target="_blank">
+    <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" width="190">
+  </a>
+</p>
+
+> **[☕ Support Development on Buy Me a Coffee](https://buymeacoffee.com/icpriceaction)**
+
+---
+
 ## ⚡ Key Features
 
 - **On-Chart Economic Calendar:** A dockable panel lists upcoming and recent events with local time, a live countdown ("in 1h 25m", "NOW", "12m ago"), currency and title, grouped by day. Click the panel to collapse it to a single header line showing the next event's time and countdown.
 - **News Markers, Zones & Alerts:** Vertical lines mark each event, colored by impact, and optional shaded zones cover a configurable window before and after it. Upcoming events that are still off-screen are pinned to the chart's right edge with their time and countdown, including on tick charts. Optional NinjaTrader alerts fire a set number of minutes before high (and optionally medium) impact events.
 - **Smart Currency Detection & Strategy Flag:** The relevant currencies are detected from the instrument (ES/NQ → USD, 6E → EUR/USD, FDAX → EUR, forex pairs, and more), or you can set your own list. Strategies can read `IsInNewsWindow`, `MinutesToNextEvent` and `NextEventDescription` to stand aside around news in real time.
-- **PATS & Context Aligned:** Designed for Price Action principles (Mack / Thomas Wade) and disciplined futures execution.
-- **Zero Chart Lag:** Native C# execution optimized to prevent UI freezes on high-frequency 2000-tick ES/MES charts.
+- **PATS & Context Aligned:** Designed for Price Action principles and disciplined futures execution.
+- **Zero Chart Lag:** Native C# execution optimized to prevent UI freezes on high-frequency tick charts.
 - **Clean Visuals:** Complementary default palette that preserves candlestick clarity without chart clutter.
 - **Fully Customizable:** Configure colors, thresholds, offsets, and alerts via the native NT8 settings panel.
 
@@ -48,7 +65,7 @@ Watch the complete breakdown of parameters, price action context, and chart exam
 ## 📥 Installation Guide
 
 1. Head to the **[Releases](https://github.com/icPriceAction/news/releases)** tab of this repository.
-2. Download the latest release `.zip` file (`icPriceAction_icPANews_v1.5.4.zip`).
+2. Download the latest release `.zip` file.
    - *Note: Do NOT extract or unzip the file.*
 3. Open **NinjaTrader 8**.
 4. In the Control Center, navigate to:
@@ -104,8 +121,8 @@ Watch the complete breakdown of parameters, price action context, and chart exam
 
 ## 📝 Changelog
 
-- **v1.5.4** (2026-11-04) - Initial public release. Cleaned and optimized by icPriceAction. Renamed to icPA - News; upcoming events placed on the chart's own time axis on every chart type, and pinned to the right edge with a countdown when off-screen; collapsing the panel leaves a single header line with the next event; click-to-collapse fix; faster, allocation-free rendering.
-- **v1.4.2** (2026-11-03) - Strategy API answers in real time only; no countdown for all-day events; atomic disk cache write; collapsed empty panel divider fix.
+- **v1.5.4** - Initial public release. Cleaned and optimized by icPriceAction. Renamed to icPA - News; upcoming events placed on the chart's own time axis on every chart type, and pinned to the right edge with a countdown when off-screen; collapsing the panel leaves a single header line with the next event; click-to-collapse fix; faster, allocation-free rendering.
+- **v1.4.2** - Strategy API answers in real time only; no countdown for all-day events; atomic disk cache write; collapsed empty panel divider fix.
 - **v1.4.1** - Reliable click-to-collapse; empty collapsed panel shrinks to its header.
 - **v1.4.0** - Time format (24h / 12h), day labels, dimmed past events, click-to-collapse.
 - **v1.3.0** - Impact toggles, bank holidays, shaded news zones, alerts and the strategy API.
@@ -113,15 +130,6 @@ Watch the complete breakdown of parameters, price action context, and chart exam
 - **v1.2.0** - Themes (Auto, Dark, Light, Custom); markers can cover the entire week.
 - **v1.1.0** - Built-in JSON parser, chart-type aware markers, Currencies setting, all-day events.
 - **v1.0.0** - Initial versions.
-
----
-
-## ☕ Support the Project
-
-All tools provided by **icPriceAction** are 100% free and open-source for personal trading use. These tools, even thou supported by AI have taken considerable time to design, build, test and package. If these tools bring you value, consider supporting continued development:
-
-- **Prop Firm Traders:** Use discount code **`ICPAT`** at checkout across top futures prop evaluation firms ([View Active Discounts](https://icpriceaction.com/prop-firms.html)).
-- **Profitable Traders:** Send a one-time tip to support my continued support and time, server hosting and open-source updates via [Buy Me a Coffee](https://buymeacoffee.com/icpriceaction).
 
 ---
 

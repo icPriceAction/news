@@ -10,7 +10,6 @@
 // Repository:   https://github.com/icPriceAction/news
 // YouTube:      https://youtube.com/@icPriceAction
 // Support:      https://buymeacoffee.com/icpriceaction
-// Prop Code:    ICPAT (Discounts: https://icpriceaction.com/prop-firms.html)
 //
 // License:      Free for personal trading use. Commercial resale, redistribution,
 //               or repackaging is strictly prohibited. See LICENSE in official repository.
@@ -20,22 +19,22 @@
 //               alerts, plus a real-time IsInNewsWindow flag for strategies.
 //
 // Changelog:
-//   v1.5.4 (2026-11-04) - Initial public release. Cleaned and optimized by icPriceAction.
-//                       - Renamed to icPANews (namespace NinjaTrader.NinjaScript.Indicators.icPA),
-//                         display name "icPA - News".
-//                       - Upcoming events are placed where the chart's own time axis shows their
-//                         time, on time-based and Tick / Range / Renko / Volume charts alike.
-//                       - Upcoming events beyond the chart's right edge (within HUD Lookforward
-//                         Minutes) are pinned to the right edge with their time and countdown.
-//                       - Collapsing the panel hides the event list; the header line shows the
-//                         next event's time and countdown.
-//                       - Fixed click-to-collapse not responding while the panel sits over price bars.
-//                       - SharpDX brushes, stroke and text formats are created in
-//                         OnRenderTargetChanged instead of OnRender.
-//                       - Removed LINQ and per-frame list allocations from the render path.
-//                       - Default WPF brushes are frozen; the refresh timer is stopped on the UI thread.
-//   v1.4.2 (2026-11-03) - Strategy API answers in real time only; no countdown for all-day
-//                         events; atomic disk cache write; collapsed empty panel divider fix.
+//   v1.5.4 - Initial public release. Cleaned and optimized by icPriceAction.
+//          - Renamed to icPANews (namespace NinjaTrader.NinjaScript.Indicators.icPA),
+//             display name "icPA - News".
+//          - Upcoming events are placed where the chart's own time axis shows their
+//            time, on time-based and Tick / Range / Renko / Volume charts alike.
+//          - Upcoming events beyond the chart's right edge (within HUD Lookforward
+//             Minutes) are pinned to the right edge with their time and countdown.
+//          - Collapsing the panel hides the event list; the header line shows the
+//            next event's time and countdown.
+//          - Fixed click-to-collapse not responding while the panel sits over price bars.
+//          - SharpDX brushes, stroke and text formats are created in
+//            OnRenderTargetChanged instead of OnRender.
+//          - Removed LINQ and per-frame list allocations from the render path.
+//          - Default WPF brushes are frozen; the refresh timer is stopped on the UI thread.
+//   v1.4.2 - Strategy API answers in real time only; no countdown for all-day
+//            events; atomic disk cache write; collapsed empty panel divider fix.
 //   v1.4.1 - Reliable click-to-collapse; empty collapsed panel shrinks to its header.
 //   v1.4.0 - Time format (24h / 12h), day labels, dimmed past events,
 //            click-to-collapse. Defaults: news window 5 / 5 min, alerts off.
@@ -584,7 +583,7 @@ namespace NinjaTrader.NinjaScript.Indicators.icPA
             {
                 Description = "Economic calendar on the chart from the Forex Factory weekly feed: a panel with countdowns, vertical event markers, shaded news windows and optional alerts. Works on any chart (Daily and higher show the panel only) and needs an internet connection. v" + IndicatorVersion + "\r\n\r\n"
                             + "Developed by Istvan Cebrian | https://icpriceaction.com\r\n\r\n"
-                            + "Support this free tool: https://buymeacoffee.com/icpriceaction | Prop Firm Discount Code: ICPAT (https://icpriceaction.com/prop-firms.html)";
+                            + "Support this free tool: https://buymeacoffee.com/icpriceaction";
                 Name = "icPA - News";
                 Calculate = Calculate.OnBarClose;   // OnBarUpdate is empty; rendering is driven by the timer / ForceRefresh
                 IsOverlay = true;
