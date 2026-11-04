@@ -20,43 +20,34 @@
 //               alerts, plus a real-time IsInNewsWindow flag for strategies.
 //
 // Changelog:
-//   v1.5.4 (2026-11-04) - Tick, Range, Renko and Volume charts now also place upcoming events using
-//                         the chart's own time axis, so the line matches the time labels.
-//   v1.5.3 (2026-11-04) - Upcoming events on Minute / Second charts are now placed using the chart's
-//                         own time axis, so the line sits on the event's bar.
-//   v1.5.2 (2026-11-04) - Fixed upcoming event lines jumping around when zooming: bar spacing
-//                         is now measured over many bars instead of a single rounded gap.
-//   v1.5.1 (2026-11-04) - Collapsing the panel now hides the event list: the header line alone
-//                         shows the next event's time and countdown.
-//                       - Fixed upcoming events drawn at the wrong time on Minute / Second charts:
-//                         times after the last bar are now projected from the bar spacing.
-//   v1.5.0 (2026-11-04) - Upcoming events beyond the chart's right edge (within HUD Lookforward
-//                         Minutes) are pinned to the right edge with their time and countdown,
-//                         so they are visible before they happen.
-//                       - Non-time-based charts (Tick, Range, Renko, Volume, ...) now project
-//                         upcoming events and news zones forward from the recent bar pace.
-//                       - Fixed click-to-collapse not responding while the panel lists events.
-//   v1.4.3 (2026-11-03) - Initial public release. Cleaned and optimized by icPriceAction.
+//   v1.5.4 (2026-11-04) - Initial public release. Cleaned and optimized by icPriceAction.
 //                       - Renamed to icPANews (namespace NinjaTrader.NinjaScript.Indicators.icPA),
 //                         display name "icPA - News".
-//                       - SharpDX brushes, stroke and text formats are now created in
+//                       - Upcoming events are placed where the chart's own time axis shows their
+//                         time, on time-based and Tick / Range / Renko / Volume charts alike.
+//                       - Upcoming events beyond the chart's right edge (within HUD Lookforward
+//                         Minutes) are pinned to the right edge with their time and countdown.
+//                       - Collapsing the panel hides the event list; the header line shows the
+//                         next event's time and countdown.
+//                       - Fixed click-to-collapse not responding while the panel sits over price bars.
+//                       - SharpDX brushes, stroke and text formats are created in
 //                         OnRenderTargetChanged instead of OnRender.
 //                       - Removed LINQ and per-frame list allocations from the render path.
 //                       - Default WPF brushes are frozen; the refresh timer is stopped on the UI thread.
 //   v1.4.2 (2026-11-03) - Strategy API answers in real time only; no countdown for all-day
 //                         events; atomic disk cache write; collapsed empty panel divider fix.
-//   v1.4.1 (date unknown) - Reliable click-to-collapse; empty collapsed panel shrinks to its header.
-//   v1.4.0 (date unknown) - Time format (24h / 12h), day labels, dimmed past events,
-//                           click-to-collapse. Defaults: news window 5 / 5 min, alerts off.
-//   v1.3.0 (date unknown) - Impact toggles, bank holidays, shaded news zones, alerts and the
-//                           strategy API. Defaults: lookback 120, lookforward 240, font 16.
-//   v1.2.1 (date unknown) - Panel drawn above drawing objects; indicator label hidden by
-//                           default; HUD offset settings.
-//   v1.2.0 (date unknown) - Themes (Auto, Dark, Light, Custom); markers can cover the entire week.
-//   v1.1.0 (date unknown) - Built-in JSON parser, chart-type aware markers, Currencies setting,
-//                           all-day events, font-scaled panel, no network use outside charts
-//                           and live strategies.
-//   v1.0.0 (date unknown) - Initial versions (1.0.x).
+//   v1.4.1 - Reliable click-to-collapse; empty collapsed panel shrinks to its header.
+//   v1.4.0 - Time format (24h / 12h), day labels, dimmed past events,
+//            click-to-collapse. Defaults: news window 5 / 5 min, alerts off.
+//   v1.3.0 - Impact toggles, bank holidays, shaded news zones, alerts and the
+//            strategy API. Defaults: lookback 120, lookforward 240, font 16.
+//   v1.2.1 - Panel drawn above drawing objects; indicator label hidden by
+//            default; HUD offset settings.
+//   v1.2.0 - Themes (Auto, Dark, Light, Custom); markers can cover the entire week.
+//   v1.1.0 - Built-in JSON parser, chart-type aware markers, Currencies setting,
+//            all-day events, font-scaled panel, no network use outside charts
+//            and live strategies.
+//   v1.0.0 - Initial versions (1.0.x).
 // =========================================================================================
 
 #region Using declarations
